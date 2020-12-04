@@ -1,0 +1,917 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- 13.캐로셀 안의 컨텐츠에 사용할 animate.css cdn link -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- 1.파비콘 넣기 -->
+    <link rel="icon" href="img/tesla_favicon.ico">
+    <!-- 19.css와 js를 따라 분리 -->
+    <link rel="stylesheet" href="css/mystyle.css">
+
+    <title>TESLA</title>
+   
+  </head>
+  <!-- 35.scrollspy를 위한 data속성 설정 -->
+  <!-- 57.스크롤시 활성화되는 메뉴의 시점이 잘 맞지 않는 부분에 data-offset으로 조절 -->
+  <body data-spy="scroll" data-target="#navbarSupportedContent" data-offset="120">
+    <!-- 15.loading img넣기 -->
+  
+    <div class="loading">
+        <div class="d-flex justify-content-center">
+            <img src="img/tesla_loading_2.gif" alt="">
+        </div>
+    </div>
+    <!-- 3. container-fluid안의 x축padding:0 -->
+    <div class="container-fluid px-0">
+        <!-------------------------------------
+            26.상단의 캐로셀과 네브바 컨텐츠를 header#top으로 설정
+        ---------------------------------------->
+        <header id="top">
+            <div id="topCarousel" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#topCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#topCarousel" data-slide-to="1"></li>
+                <li data-target="#topCarousel" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="carousel-caption">
+                        <h5>
+                           <img src="img/carousel_01_up.png" alt="" class="animate__animated animate__fadeInUpBig img-fluid">
+                        </h5>
+                        <p>
+                        <img src="" alt="" class="animate__animated animate__fadeInUpBig">
+                        </p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="carousel-caption">
+                    <h5>
+                       <img src="img/carousel_02_text.png" alt="" class="animate__animated animate__fadeInRightBig animate__delay img-fluid">
+                    </h5>
+                    <p>
+                        <img src="img/carousel_02.png" alt=""class="animate__animated animate__fadeInRightBig img-fluid d-none d-sm-block">
+                        <img src="img/carousel_02_2.png" alt="" class="animate__animated animate__fadeInLeftBig img-fluid d-block d-sm-none">
+                    </p>
+                  </div>
+                </div>
+                <div class="carousel-item">    
+                  <video src="img/teslavideo.mp4" autoplay muted loop playsinline class="" style="position:absolute; left:50%; margin-left: -960px;">
+                  </video>
+                </div>    
+            </div>
+              <a class="carousel-control-prev" href="#topCarousel" role="button" data-slide="prev">
+                <!-- 4.캐로셀 left, right 아이콘을 bs4의 svg코드로 변경하고 크기를 원하는 사이즈로 변경 -->
+                <svg width="4em" height="4em" viewBox="0 0 16 16" class="bi bi-chevron-compact-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223z"/>
+                </svg>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#topCarousel" role="button" data-slide="next">
+               <svg width="4em" height="4em" viewBox="0 0 16 16" class="bi bi-chevron-compact-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z"/>
+                </svg>
+                <span class="sr-only">Next</span>
+              </a>
+              </div>
+            </div><!-- .carousel -->
+          </div>
+        </div>
+         
+         
+            <!-- 20.navbar넣고 li메뉴 7개 작성 -->
+            <!-- 33.네브바에 scrollspy 설정 -->
+            <!-- 34.네브바의 속성을 position:sticky로 설정 -->
+          </header>  
+          <!-- 56.네브바가 최상단으로 스크롤되었을 때 fixed되도록 sticky-top을 추가하는데 구조상 본인이 최상위 구조여야 작동한다!! -->
+          <!-- <div class="row bg-gray fixed-top"> -->
+            <div class="container-fluid-xl fixed-top">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+                  <!-- 24.상단네브 좌측에 로고 2개 넣고 화면 사이즈별로 서로 다른 이미지가 보이도록 설정 -->
+                  <a class="navbar-brand text-hide" href="#">테슬라
+                    <img src="img/tesla_logo_md_(2).png" alt="" class="img-fluid d-none d-lg-block"> 
+                    <img src="img/tesla_logo_sm.png" alt="" class="img-fluid d-lg-none">   
+                  </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- 22.ul을 우측으로 이동하기 위해 mr-auto 를 ml-auto, mx-auto로 수정 -->
+                    <ul class="navbar-nav ml-auto">
+                      <!-- 36.스크롤스파이가 작동하기 위해 각 li>a의 href="#아이디명" 설정하고 첫번째 li가 갖고있던 .active 삭제 -->
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#top">TESLA<span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#birth">STORY</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                         <a class="nav-link" href="#secret">MODEL</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                         <a class="nav-link" href="#products">ELECTRIC</a>
+                      </li>
+                      <li class="nav-item">
+                         <a class="nav-link" href="#cf">VIDEO</a>
+                      </li>
+                      <li class="nav-item">
+                         <a class="nav-link" href="#garden">STORE</a>
+                      </li>
+                       <li class="nav-item">
+                         <a class="nav-link" href="#contact">CONTACT</a>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+            </div><!-- .container-xl -->
+        <!-- </div> --><!-- .row -->
+        <!-------------------------------------
+            27.두번째 컨텐츠를 section#birth로 지정
+        ---------------------------------------->
+        <!-- section#birth>div.container>div.row>div.col-md-8 -->
+        <section id="birth" class="story_bg">
+            <div class="container bg-wrap py-5">
+              <div class="bg-story">
+                <div class="row py-5y">
+                    <div class="col-md-8 offset-md-2">
+                          <img src="img/story_title.png" class="wp1 img-fluid mx-auto" alt="">
+                    </div><!-- col-md-8 offset-md-2 -->
+                </div><!-- row -->
+                <div class="row py-5">
+                    <div class="col-lg-6 ">
+                        <div class="row">
+                            <img src="img/story_menu2.png" class="wp2 img-fluid mx-auto" alt="">
+                        </div>
+                    </div><!-- col-md-8 offset-md-2 -->
+                    <div class="col-lg-6">
+                        
+                            <img src="img/inside.jpg" class="wp3 img-fluid" alt="">
+                        
+                    </div><!-- col-md-8 offset-md-2 -->
+                </div><!-- row -->
+
+                <div class="row py-5">
+                    <div class="col">
+                        <img src="img/story_menu4.png" class="wp4 img-fluid mx-auto d-block" alt="">
+                         <img src="img/story_menu5.png" class="wp5 img-fluid mx-auto d-block" alt="">
+
+                    </div><!-- col-md-8 offset-md-2 -->
+                </div><!-- row -->
+                <div class="row py-5">
+                  <div class="col">
+                    
+                    <img src="img/story_bottom.png" class="wp6 img-fluid mx-auto d-block" alt="">
+                    
+                  </div>
+                </div>
+              </div>
+            </div><!-- container -->
+        </section>    
+        <!-------------------------------------
+            28.세번째 컨텐츠를 section#secret로 지정
+        ---------------------------------------->
+        <!-- section#secret>div.container>div.row>div.col-md-6*2 -->
+        <section id="secret" class="">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+     
+      <div class="carousel-caption">
+        <h1 class="animate__animated animate__fadeInUpBig txt-black d-xl-none">MODEL S</h1>
+        <h1 class="animate__animated animate__fadeInUpBig d-none d-xl-block" style="">MODEL S</h1>
+        <h5>
+          <img src="img/model_s_txt.png" alt="" class="animate__animated animate__fadeInUpBig img-fluid" style="margin-bottom: 20px;">
+        </h5>
+        <a class="d-block" href="https://www.tesla.com/ko_kr/models/design#battery" target="_blank">
+        <img src="img/now_buy.png" onmouseover="this.src='img/now_buy_2.png'" onmouseout="this.src='img/now_buy.png'" class="img-fluid animate__animated animate__fadeInUpBig" style="margin-bottom: 20px;">
+      </a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      
+      <div class="carousel-caption">
+        <h1 class="animate__animated animate__fadeInUpBig">MODEL 3</h1>
+        <h5><img src="img/model_3_txt.png" alt="" class="animate__animated animate__fadeInUpBig img-fluid">
+          
+        </h5>
+        <a class="d-block" href="https://www.tesla.com/ko_kr/model3/design#battery" target="_blank">
+        <img src="img/now_buy_3.png" onmouseover="this.src='img/now_buy_4.png'" onmouseout="this.src='img/now_buy_3.png'" class="img-fluid animate__animated animate__fadeInUpBig" style="margin-bottom: 20px;">
+      </a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      
+      <div class="carousel-caption">
+        <h1 class="animate__animated animate__fadeInUpBig">MODEL X</h1>
+        <h5><img src="img/model_x_txt.png" alt="" class="animate__animated animate__fadeInUpBig img-fluid"></h5>
+        <a class="d-block" href="https://www.tesla.com/ko_kr/modelx/design#battery" target="_blank">
+        <img src="img/now_buy_3.png" onmouseover="this.src='img/now_buy_4.png'" onmouseout="this.src='img/now_buy_3.png'" class="img-fluid animate__animated animate__fadeInUpBig" style="margin-bottom: 20px;">
+      </a>
+      </div>
+    </div>
+    <div class="carousel-item">
+     
+      <div class="carousel-caption">
+        <h1 class="animate__animated animate__fadeInUpBig">MODEL Y</h1>
+        <h5><img src="img/model_y_txt.png" alt="" class="animate__animated animate__fadeInUpBig img-fluid"></h5>
+        <a class="d-block" href="https://www.tesla.com/modely/design#battery" target="_blank">
+        <img src="img/now_buy_3.png" onmouseover="this.src='img/now_buy_4.png'" onmouseout="this.src='img/now_buy_3.png'" class="img-fluid animate__animated animate__fadeInUpBig" style="margin-bottom: 20px;">
+      </a>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+     
+      <div class="carousel-caption">
+        <h1 class="animate__animated animate__fadeInUpBig">ROADSTER</h1>
+        <h5><img src="img/roadster_txt.png" alt="" class="animate__animated animate__fadeInUpBig img-fluid"></h5>
+        <a class="d-block" href="https://www.tesla.com/ko_kr/roadster/reserve#payment" target="_blank">
+        <img src="img/book_it.png" onmouseover="this.src='img/book_it_hover.png'" onmouseout="this.src='img/book_it.png'" class="img-fluid animate__animated animate__fadeInUpBig" style="margin-bottom: 20px;">
+      </a>
+      </div>
+    </div>
+    <div class="carousel-item">
+     
+      <div class="carousel-caption">
+        <h1 class="animate__animated animate__fadeInUpBig">CYBERTRUCK</h1>
+        <h5><img src="img/cybertruck_txt.png" alt="" class="animate__animated animate__fadeInUpBig img-fluid"></h5>
+        <a class="d-block" href="https://www.tesla.com/ko_kr/cybertruck/design#battery" target="_blank">
+        <img src="img/now_buy_3.png" onmouseover="this.src='img/now_buy_4.png'" onmouseout="this.src='img/now_buy_3.png'" class="img-fluid animate__animated animate__fadeInUpBig" style="margin-bottom: 20px;">
+      </a>
+      </div>
+    </div>
+    <div class="carousel-item">
+     
+      <div class="carousel-caption">
+        <h1 class="animate__animated animate__fadeInUpBig">SEMI</h1>
+        <h5><img src="img/semi_txt.png" alt="" class="animate__animated animate__fadeInUpBig img-fluid"></h5>
+        
+        <img src="img/not_yet.png"class="img-fluid animate__animated animate__fadeInUpBig" style="margin-bottom: 20px;">
+      
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <svg width="4em" height="4em" viewBox="0 0 16 16" class="bi bi-chevron-compact-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223z"/>
+                </svg>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+               <svg width="4em" height="4em" viewBox="0 0 16 16" class="bi bi-chevron-compact-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z"/>
+                </svg>
+                <span class="sr-only">Next</span>
+  </a>
+</div>
+        </section>
+        <!-------------------------------------
+            40.네번째 컨텐츠를 section#products로 지정
+        ---------------------------------------->
+        <!-- section#products>div.container>div.row*3 -->
+        <section id="products" class="electric_bg">
+            <video src="img/charging_overview.mp4" autoplay muted loop playsinline width="100%" height="auto" class="">
+            </video>
+          <div class="container bg-wrap py-5">
+            <div class="bg-electric">
+            <div class="row py-5">
+              <img src="img/electric_title.png" alt="" class="img-fluid mx-auto">
+            </div>
+            <div class="row py-5">
+              <div class="col-md-4">
+                <div class="row">
+                  <img src="img/charging_txt1.png" alt="" class="img-fluid mx-auto">
+                </div><!-- row -->
+              </div>
+              <div class="col-md-6 offset-md-2 d-md-flex">
+                  <img src="img/super_charger.png" alt="" class="img-fluid mx-auto">
+              </div>
+            </div><!-- row -->
+            <div class="row py-5">
+              <div class="col-md-4">
+                <div class="row">
+                  <img src="img/charging_txt2.png" alt="" class="img-fluid mx-auto" style="margin-bottom: 50px">
+                </div><!-- row -->
+              </div>
+              <div class="col-md-6 offset-md-2 d-md-flex">
+                
+                  <img src="img/charging_network.jpg" alt="" class="img-fluid mx-auto">
+                
+              </div>
+            </div><!-- row -->
+            <div class="row py-5">
+              <div class="col-md-4">
+                <div class="row">
+                  <a href="https://www.tesla.com/ko_KR/support/tesla-app" target="_balnk" class="img-fluid mx-auto"><img src="img/charging_txt3.png" alt="" class="img-fluid mx-auto scale" style="margin-bottom:20px;">
+                    </a>
+                </div><!-- row -->
+              </div>
+              <div class="col-md-6 offset-md-2 d-md-flex">
+                
+                  <img src="img/charging_app.png" alt="" class="img-fluid mx-auto">
+               
+              </div>
+            </div><!-- row -->
+            <div class="col">
+            <div class="row py-5 mx-auto d-block text-center">
+                <a href="https://www.tesla.com/ko_KR/findus/list/superchargers/South%20Korea" target="_balnk" class="img-fluid mx-auto"><img src="img/charging_place.png" alt="" class="img-fluid mx-auto scale"></a>
+              </div>
+            </div>
+            </div>
+          </div><!-- container -->
+         
+        </section>
+        <!-------------------------------------
+            41.다섯번째 컨텐츠(동영상)를 section#cf로 지정
+        ---------------------------------------->
+        <!-- section#cf>div.container>div.row*2 -->
+        <section id="cf" class="video_bg">
+          <div class="container bg-wrap py-5">
+            <div class="bg-video">
+            <div class="row py-5">
+              <img src="img/video_title_2.png" alt="" class="img-fluid mx-auto samll d-none d-md-block">
+            </div>
+            <div class="row pb-5">
+              <div class="col-8 mx-auto">
+                <!-- 43.유튜브 동영상 embed -->
+                <div class="embed-responsive embed-responsive-16by9 d-none d-md-block">
+                 <!-- 44.유튜브 매개변수를 활용하여 동영상 play 속성변경: 자동플레이하려면 autoplay=1&mute=1, 무한반복하려면 loop=1&playlist=video_id 등  -->
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Sbr_zx0sjUs?loop=1&playlist=ShZ9_uWViV4&autoplay=1&mute=1&color=white"></iframe>
+                </div>
+                <!-- 45.xs, sm 사이즈에서는 동영상을 숨기고 링크로 변환 -->
+                
+                 
+                <a href="https://www.youtube.com/watch?v=Sbr_zx0sjUs" target="_blank" class="d-md-none img-fluid mx-auto text-center">
+                  <div class="row">
+                    <img src="img/video_title_3.png" alt="" class="img-fluid mx-auto scale text-center">
+                  </div><!-- row -->
+                </a>
+              </div><!-- col-8 mx-auto -->
+            </div><!-- row -->
+            </div>
+          </div><!-- container -->
+        </section>
+        <!-------------------------------------
+            46.여번째 컨텐츠(카드)를 section#garden로 지정    ---------------------------------------->
+            <!-- section#garden>div.container>div.row*2 -->
+        <section id="garden" class="pb-5">
+          
+           
+            
+          <div class="container d-none d-sm-block">
+             <div class="row">
+              <img src="img/tesla_store_title.png" alt="" class="img-fluid mx-auto text-center">
+            </div>
+            <div class="row">
+              <div class="col pb-5">
+                <!-- 48.card 컴포넌트 넣기 -->
+                <!-- 50. .card옆에 style width값 삭제 -->
+                <div class="card border">
+                  <!-- 49.이미지 지우고 캐로셀 넣기 -->
+                  <!-- 55. card안에 .carousel이 가지고 있는 id명을 변경하고 ol>li가 가지고 있는 data-target속성값과 a태그가 가지고 있는 href속성값을 같은 이름으로 맞춰준다. -->
+                  <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
+                      <li data-target="#carouselExampleIndicators1" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="img/tesla_stores/tesla_store01.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                      <div class="carousel-item">
+                        <img src="img/tesla_stores/tesla_store02.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                      <div class="carousel-item">
+                        <img src="img/tesla_stores/tesla_store03.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                      <div class="carousel-item">
+                        <img src="img/tesla_stores/tesla_store04.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                    </div><!-- carousel-inner -->
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div><!-- carousel -->
+                  <!-- 53.card-body앞쪽에 sns관련 아이콘 -->
+                  <h6 class="card-title text-white small bg-dark p-2">
+                    <i class="far fa-comments"></i> 7 comments&nbsp;&nbsp;
+                    <i class="fas fa-camera-retro"></i> 100 shares
+                  </h6>
+                  <div class="card-body small">
+                    <h6 class="card-title text-dark text-uppercase">
+                      <span class="date">march 15, 2017 in hanam</span>
+                    </h6>
+                    <p class="card-text">테슬라 in 하남 스타필드</p>
+                  </div><!-- card-body -->
+                  <!-- 51.버튼 삭제하고 구글맵 활용 -->
+
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.41011928553!2d127.22156431564761!3d37.545400233095265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cb3cdddbaa28d%3A0x62cec32aeeb0c86b!2z7YWM7Iqs6528IO2VmOuCqOyKpO2GoOyWtA!5e0!3m2!1sko!2skr!4v1606118426898!5m2!1sko!2skr" width="100%" height="50%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div><!-- card -->
+              </div><!-- col_2 -->
+              <div class="col pb-5">
+                <!-- 48.card 컴포넌트 넣기 -->
+                <!-- 50. .card옆에 style width값 삭제 -->
+                <div class="card border">
+                  <!-- 49.이미지 지우고 캐로셀 넣기 -->
+                  <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
+                      <li data-target="#carouselExampleIndicators2" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="img/tesla_stores/tesla_store05.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                      <div class="carousel-item">
+                        <img src="img/tesla_stores/tesla_store06.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                      <div class="carousel-item">
+                        <img src="img/tesla_stores/tesla_store07.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                      <div class="carousel-item">
+                        <img src="img/tesla_stores/tesla_store08.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                    </div><!-- carousel-inner -->
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div><!-- carousel -->
+                  <!-- 53.card-body앞쪽에 sns관련 아이콘 -->
+                  <h6 class="card-title text-white small bg-dark p-2">
+                    <span><i class="fa fa-comments-o"></i> 3 Comments</span>
+                    <span><i class="fas fa-camera-retro"></i> 125 Shares</span>
+                  </h6>
+                  <div class="card-body small">
+                    <h6 class="card-title text-dark text-uppercase">
+                      <span class="date">march 17, 2017 in cheongdam</span>
+                    </h6>
+                    <p class="card-text">테슬라 in 청담</p>
+                  </div><!-- card-body -->
+                  <!-- 51.버튼 삭제하고 구글맵 활용 -->
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.3517384561687!2d127.05375721564718!3d37.52320503436557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca4641efe9e8b%3A0xe3e2e062129c9102!2z7YWM7Iqs65287Iqk7Yag7Ja0IOyyreuLtOygkA!5e0!3m2!1sko!2skr!4v1606118357354!5m2!1sko!2skr" width="100%" height="50%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div><!-- card -->
+              </div><!-- col -->
+              <div class="col pb-5">
+                <!-- 48.card 컴포넌트 넣기 -->
+                <!-- 50. .card옆에 style width값 삭제 -->
+                <div class="card border">
+                  <!-- 49.이미지 지우고 캐로셀 넣기 -->
+                  <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators3" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleIndicators3" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleIndicators3" data-slide-to="2"></li>
+                      <li data-target="#carouselExampleIndicators3" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="img/tesla_stores/tesla_store09.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                      <div class="carousel-item">
+                        <img src="img/tesla_stores/tesla_store10.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                      <div class="carousel-item">
+                        <img src="img/tesla_stores/tesla_store11.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                      <div class="carousel-item">
+                        <img src="img/tesla_stores/tesla_store12.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                    </div><!-- carousel-inner -->
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div><!-- carousel -->
+                  <!-- 53.card-body앞쪽에 sns관련 아이콘 -->
+                  <h6 class="card-title text-white small bg-dark p-2">
+                    <span><i class="fa fa-comments-o"></i> 15 Comments</span>
+                          <span><i class="fas fa-camera-retro"></i> 200 Shares</span>
+                  </h6>
+                  <div class="card-body small">
+                    <h6 class="card-title text-dark text-uppercase">
+                      <span class="date">september 06, 2020 in busan</span>
+                    </h6>
+                    <p class="card-text">테슬라 in 부산
+                    </p>
+                  </div><!-- card-body -->
+                  <!-- 51.버튼 삭제하고 구글맵 활용 -->
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26094.773733361144!2d129.11777741259118!3d35.160443378954156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356893d2b75f8623%3A0x75ccc2ce5b622089!2z7YWM7Iqs6528IOu2gOyCsOyEnOu5hOyKpOyEvO2EsA!5e0!3m2!1sko!2skr!4v1606118527675!5m2!1sko!2skr" width="100%" height="50%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div><!-- card -->
+              </div><!-- col -->
+              
+            </div><!-- row -->
+          </div><!-- container -->
+
+          <div class="container-fluid d-sm-none">
+            <div class="container d-sm-none">
+            <div class="row py-5">
+              <img src="img/tesla_store_title.png" alt="" class="img-fluid mx-auto text-center">
+            </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-1 row-cols-la-3">
+              <div class="col pb-5">
+                <!-- 48.card 컴포넌트 넣기 -->
+                <!-- 50. .card옆에 style width값 삭제 -->
+                <div class="card border">
+                  <!-- 49.이미지 지우고 캐로셀 넣기 -->
+                  <!-- 55. card안에 .carousel이 가지고 있는 id명을 변경하고 ol>li가 가지고 있는 data-target속성값과 a태그가 가지고 있는 href속성값을 같은 이름으로 맞춰준다. -->
+                  <div id="carouselExampleIndicators11" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators11" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleIndicators11" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleIndicators11" data-slide-to="2"></li>
+                      <li data-target="#carouselExampleIndicators11" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="img/tesla_stores/tesla_store01.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                      <div class="carousel-item">
+                        <img src="img/tesla_stores/tesla_store02.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                      <div class="carousel-item">
+                        <img src="img/tesla_stores/tesla_store03.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                      <div class="carousel-item">
+                        <img src="img/tesla_stores/tesla_store04.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                    </div><!-- carousel-inner -->
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators11" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators11" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div><!-- carousel -->
+                  <!-- 53.card-body앞쪽에 sns관련 아이콘 -->
+                  <h6 class="card-title text-white small bg-dark p-2">
+                    <i class="far fa-comments"></i> 7 comments&nbsp;&nbsp;
+                    <i class="fas fa-camera-retro"></i> 100 shares
+                  </h6>
+                  <div class="card-body small">
+                    <h6 class="card-title text-dark text-uppercase">
+                      <span class="date">march 15, 2017 in hanam</span>
+                    </h6>
+                    <p class="card-text">테슬라 in 하남 스타필드</p>
+                  </div><!-- card-body -->
+                  <!-- 51.버튼 삭제하고 구글맵 활용 -->
+
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.41011928553!2d127.22156431564761!3d37.545400233095265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cb3cdddbaa28d%3A0x62cec32aeeb0c86b!2z7YWM7Iqs6528IO2VmOuCqOyKpO2GoOyWtA!5e0!3m2!1sko!2skr!4v1606118426898!5m2!1sko!2skr" width="100%" height="50%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div><!-- card -->
+              </div><!-- col_2 -->
+              <div class="col pb-5">
+                <!-- 48.card 컴포넌트 넣기 -->
+                <!-- 50. .card옆에 style width값 삭제 -->
+                <div class="card border">
+                  <!-- 49.이미지 지우고 캐로셀 넣기 -->
+                  <div id="carouselExampleIndicators12" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators12" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleIndicators12" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleIndicators12" data-slide-to="2"></li>
+                      <li data-target="#carouselExampleIndicators12" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="img/tesla_stores/tesla_store05.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                      <div class="carousel-item">
+                        <img src="img/tesla_stores/tesla_store06.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                      <div class="carousel-item">
+                        <img src="img/tesla_stores/tesla_store07.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                      <div class="carousel-item">
+                        <img src="img/tesla_stores/tesla_store08.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                    </div><!-- carousel-inner -->
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators12" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators12" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div><!-- carousel -->
+                  <!-- 53.card-body앞쪽에 sns관련 아이콘 -->
+                  <h6 class="card-title text-white small bg-dark p-2">
+                    <span><i class="fa fa-comments-o"></i> 3 Comments</span>
+                    <span><i class="fas fa-camera-retro"></i> 125 Shares</span>
+                  </h6>
+                  <div class="card-body small">
+                    <h6 class="card-title text-dark text-uppercase">
+                      <span class="date">march 17, 2017 in cheongdam</span>
+                    </h6>
+                    <p class="card-text">테슬라 in 청담</p>
+                  </div><!-- card-body -->
+                  <!-- 51.버튼 삭제하고 구글맵 활용 -->
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.3517384561687!2d127.05375721564718!3d37.52320503436557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca4641efe9e8b%3A0xe3e2e062129c9102!2z7YWM7Iqs65287Iqk7Yag7Ja0IOyyreuLtOygkA!5e0!3m2!1sko!2skr!4v1606118357354!5m2!1sko!2skr" width="100%" height="50%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div><!-- card -->
+              </div><!-- col -->
+              <div class="col pb-5">
+                <!-- 48.card 컴포넌트 넣기 -->
+                <!-- 50. .card옆에 style width값 삭제 -->
+                <div class="card border">
+                  <!-- 49.이미지 지우고 캐로셀 넣기 -->
+                  <div id="carouselExampleIndicators13" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators13" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleIndicators13" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleIndicators13" data-slide-to="2"></li>
+                      <li data-target="#carouselExampleIndicators13" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="img/tesla_stores/tesla_store09.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                      <div class="carousel-item">
+                        <img src="img/tesla_stores/tesla_store10.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                      <div class="carousel-item">
+                        <img src="img/tesla_stores/tesla_store11.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                      <div class="carousel-item">
+                        <img src="img/tesla_stores/tesla_store12.png" class="d-block w-100" alt="...">
+                      </div><!-- carousel-item -->
+                    </div><!-- carousel-inner -->
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators13" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators13" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div><!-- carousel -->
+                  <!-- 53.card-body앞쪽에 sns관련 아이콘 -->
+                  <h6 class="card-title text-white small bg-dark p-2">
+                    <span><i class="fa fa-comments-o"></i> 15 Comments</span>
+                          <span><i class="fas fa-camera-retro"></i> 200 Shares</span>
+                  </h6>
+                  <div class="card-body small">
+                    <h6 class="card-title text-dark text-uppercase">
+                      <span class="date">september 06, 2020 in busan</span>
+                    </h6>
+                    <p class="card-text">테슬라 in 부산
+                    </p>
+                  </div><!-- card-body -->
+                  <!-- 51.버튼 삭제하고 구글맵 활용 -->
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26094.773733361144!2d129.11777741259118!3d35.160443378954156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356893d2b75f8623%3A0x75ccc2ce5b622089!2z7YWM7Iqs6528IOu2gOyCsOyEnOu5hOyKpOyEvO2EsA!5e0!3m2!1sko!2skr!4v1606118527675!5m2!1sko!2skr" width="100%" height="50%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div><!-- card -->
+              </div><!-- col -->
+              
+            </div><!-- row -->
+          </div><!-- container -->
+        </section>    
+        <!-------------------------------------
+            58.일곱번째 컨텐츠(아코디언&form)를 section#contact로 지정
+        ---------------------------------------->
+        <!-- section#contact>div.container>div.row*2 -->
+        <section id="contact" class="mt-5 contact_bg">
+          <div class="container bg-wrap py-5">
+            <div class="bg-contact">
+            <div class="row py-5">
+              <img src="img/tesla_contact_title.png" alt="" class="img-fluid mx-auto">
+            </div>
+            <div class="row small">
+              <!-- 60.아코디언과 form넣을 col구조 넣기 -->
+              <div class="col-md-7">
+                <div class="row">
+                  <p class="mx-auto text-white">FAQ 자주 묻는 질문모음에서 찾아보세요</p>
+                </div>
+                <!-- 61.아코디언 -->
+                <div class="accordion" id="accordionExample">
+                  <!-- 62. card클래스명에 .bg-transparent를 추가 -->
+                  <div class="card bg-transparent text-white">
+                    <div class="card-header" id="headingOne">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-center text-white" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Q. Model 3 예약자입니다. 차량을 먼저 인도 받으려면 어떻게 주문해야 하나요?
+                        </button>
+                      </h2>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <a href="https://auth.tesla.com/oauth2/v1/authorize?client_id=teslaweb&response_type=code&scope=openid%20email%20profile&redirect_uri=https%3A//www.tesla.com/ko_KR/openid-connect/generic&state=-UoNvUO4jxaOyD7IWU5RKy6icREcOBU78NkqlZX4TCE&locale=ko-KR" class="txt-black" target="_blank">Tesla 계정</a>에 로그인한 후 '관리'를 클릭하여 Model 3를 디자인합니다. 디자인 후 주문대금을 납부하면 주문이 완료됩니다. 더 자세한 주문 방법을 알고 싶다면 <a href="https://www.tesla.com/sites/default/files/downloads/ko_KR/model3-order-instruction_KR.pdf?redirect=no" target="_blank" class="txt-black">여기</a>에서 확인하시기 바랍니다.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card bg-transparent text-white">
+                    <div class="card-header" id="headingTwo">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-center text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Q. 오늘 Model 3를 주문하면 언제 차량을 인도받을 수 있나요?
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                      <div class="card-body">
+                        첫 번째 인도는 2019년 4분기에 시작되며 사전 예약 일자, 인도 장소, 디자인 옵션 등에 따라 인도 순서가 결정됩니다. Model 3를 디자인하면 예상 인도 시점을 확인할 수 있으며, 실제 인도 일자는 디자인 옵션에 따라 달라질 수 있습니다.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card bg-transparent text-white">
+                    <div class="card-header" id="headingThree">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-center text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Q. 인도 당일에는 어떤 것들을 준비해야 하나요?
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                      <div class="card-body">
+                       차량을 인도받기 전 <a href="https://www.tesla.com/ko_KR/support/model-3-videos" target="_blank" class="txt-black">동영상 가이드</a>를 시청하고 Model 3에 대해 미리 알아볼 수 있습니다. 인도 당일에는 딜리버리 팀이 Model 3의 주요 기능에 대해 안내 드릴 예정입니다. 원활한 인도를 위해 최종 인도 서류 및 자동차 구매 계약을 포함한 체크리스트를 <a href="https://auth.tesla.com/oauth2/v1/authorize?client_id=teslaweb&response_type=code&scope=openid%20email%20profile&redirect_uri=https%3A//www.tesla.com/ko_KR/openid-connect/generic&state=-UoNvUO4jxaOyD7IWU5RKy6icREcOBU78NkqlZX4TCE&locale=ko-KR" class="txt-black" target="_blank">Tesla 계정</a>에서 확인하시기 바랍니다.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card bg-transparent text-white">
+                    <div class="card-header" id="headingFour">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-center text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                          Q. Model 3 예약을 어떻게 취소하나요?
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                      <div class="card-body">
+                       Model 3를 주문하지 않고 여전히 예약 상태인 경우 080-822-0291로 연락하시기 바랍니다.
+                      </div>
+                    </div>
+                  </div>
+                   <div class="card bg-transparent text-white">
+                    <div class="card-header" id="headingFive">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-center text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                          Q. 차량을 가지고 테슬라 서비스 센터 방문해야 하나요?
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                      <div class="card-body">
+                       무선 소프트웨어 업데이트(Over-the-air), 원격 진단 및 모바일 기술자의 지원으로 서비스 센터 방문 필요성이 줄었습니다. 서비스가 필요한 경우 가까운 <a href="https://www.tesla.com/ko_KR/findus?bounds=54.35365127015694%2C-57.079102750000004%2C21.879812748944772%2C-141.45410275&zoom=5&filters=service" target="_blank" class="txt-black">서비스 센터</a>에서 서비스 일정을 예약 할 수 있습니다. 차량을 Tesla 공식 서비스 센터가 아닌 곳에서 유지 보수 또는 수리하는 경우, 문제 발생 시 보증 범위가 제한될 수 있습니다.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row">
+                  <p class="mx-auto text-white">기타 문의사항은 고객센터에 문의주세요</p>
+                </div>
+                <!-- 62.form넣기 -->
+                <form>
+                  <div class="form-group">
+                    <label for="inputName" class="sr-only">이름</label>
+                    <input type="text" class="form-control bg-transparent" id="inputName" placeholder="이름">
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6">
+                      <label for="inputEmail" class="sr-only">이메일 주소</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control bg-transparent" id="inputEmail" placeholder="이메일주소">
+                        <div class="input-group-append">
+                          <div class="input-group-text bg-transparent text-white">@</div>
+                        </div>
+                      </div>  
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputState" class="sr-only">이메일 선택</label>
+                      <select id="inputState" class="form-control bg-transparent text-white">
+                        <option selected>이메일 선택</option>
+                        <option>gmail.com</option>
+                        <option>naver.com</option>
+                        <option>hanmail.com</option>
+                        <option>nate.com</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputTitle" class="sr-only">제목</label>
+                    <input type="text" class="form-control bg-transparent" id="inputTitle" placeholder="제목">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1" class="sr-only">Example textarea</label>
+                    <textarea class="bg-transparent form-control" id="exampleFormControlTextarea1 " rows="6" placeholder="문의사항을 남겨주세요"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-black btn-block">Sign in</button>
+                </form>
+              </div><!-- col -->
+            </div><!-- row -->
+            </div>
+          </div><!-- container -->
+        </section>
+        <!-- 63.footer구조 -->
+        <footer id="footer" class="bg-black small">
+          <!-- div.container>div.row*3 -->
+          <div class="container py-4">
+            <div class="row py-2">
+              <img src="img/footer_logo_tesla.png" alt="" class="img-fluid mx-auto">
+            </div>
+            <div class="row py-2">
+              <!-- div.col-md-4*3 -->
+              <div class="col-md-4 text-center text-white">
+                주소 : 서울특별시 강남구 영동대로 730
+              </div>
+              <div class="col-md-4 text-center text-white">
+                전화 : 02-6098-1700 <br>
+                구매전화 : 080-617-1388 
+              </div>
+              <div class="col-md-4 text-center text-white">
+                테슬라 홈페이지 : 
+                <a href="https://www.tesla.com/ko_KR" class="txt-gray" target="_blank">https://www.tesla.com/ko_KR</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <!-- ul>li*5>a -->
+                <ul class="list-unstyled d-flex justify-content-center">
+                  <li>
+                    <a href="https://www.instagram.com/teslamotors/?hl=en" target="_blank">
+                      <i class="txt-gray p-1 h3 fab fa-instagram-square"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/tesla?lang=en" target="_blank">
+                      <i class="txt-gray p-1 h3 fab fa-twitter-square"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/TESLAOFFICIAL/" target="_blank">
+                      <i class="txt-gray p-1 h3 fab fa-facebook-square"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/channel/UC5WjFrtBdufl6CZojX3D8dQ" target="_blank">
+                      <i class="txt-gray p-1 h3 fab fa-youtube-square"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div><!-- .container-fluid -->
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+    <!-- 37.메뉴를 클릭하면 스르륵 애니메이션 되는 외부 플러그인 연결 -->
+    <script src="js/animatescroll.min.js"></script>
+    <!-- 54.font-awesome cdn -->
+    <script src="https://kit.fontawesome.com/4c3e89fe3d.js" crossorigin="anonymous"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/myscript.js"></script>
+  </body>
+</html>

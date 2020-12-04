@@ -1,0 +1,355 @@
+    /*23.google web fonts지정*/
+    @import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);
+    @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@200;400;500&display=swap');
+    .bo{
+        border:1px solid red;
+    }
+    body{
+        font-family: 'Jeju Gothic','Saira Condensed', sans-serif;
+        height: 100vh;
+    }
+    :root{
+       --gold : #F69F00; 
+       --black : black;
+       --orange :#FCC704;
+       --white:white;
+       --gray:#D3D3D3;
+	   --red: #F61313;
+       --lightgray:#C3C3C3;
+       --animate-delay: 0.3s;
+      
+    }
+    .animate__delay{
+       animation-delay:var(--animate-delay);
+    }
+    /*5.캐로셀 안의 이미지 사이즈를 동일하게 맞추거나 화면높이에 이미지 높이 맞추기위해 img태그를 삭제하고 .carousel-item에 이미지를 css로 넣고 코딩으로 사이즈를 맞추기*/
+
+    /*10.캐로셀 밖으로 인디케이터 흘러 넘쳐도 숨겨서 스크롤 생기지 않도록 설정*/
+    #topCarousel{
+        overflow: hidden;
+    }
+    #topCarousel .carousel-item:nth-of-type(1) {
+        background: url(../img/MS-specs-desktop.jpg) no-repeat center / cover;
+        height: 100vh;
+    }
+    #topCarousel .carousel-item:nth-of-type(2){
+        background: url(../img/carousel_2_1.jpg) no-repeat center / cover;
+        height: 100vh;
+    }
+    #topCarousel .carousel-item:nth-of-type(3){
+        background: url(../img/) no-repeat center / cover;
+        height: 100vh;
+    }
+    /*7.캐로셀 안에 캡션대신 넣은 이미지 위치 맞추기*/
+    #topCarousel .carousel-caption{
+        /*border:3px solid red;*/
+        position: absolute;
+    }
+    #carouselExampleIndicators .carousel-caption{
+
+    }
+    #carouselExampleIndicators{
+        overflow: hidden;
+    }
+    #carouselExampleIndicators .carousel-item:nth-of-type(1) {
+        background: url(../img/model_s.jpg) no-repeat center / cover;
+        height: 95vh;
+    }
+    #carouselExampleIndicators .carousel-item:nth-of-type(2) {
+        background: url(../img/model_3.jpg) no-repeat center / cover;
+        height: 95vh;
+    }
+    #carouselExampleIndicators .carousel-item:nth-of-type(3) {
+        background: url(../img/model_x.jpg) no-repeat center / cover;
+        height: 95vh;
+    }
+    #carouselExampleIndicators .carousel-item:nth-of-type(4) {
+        background: url(../img/model_y2.jpg) no-repeat center / cover;
+        height: 95vh;
+    }
+     #carouselExampleIndicators .carousel-item:nth-of-type(5) {
+        background: url(../img/roadster.jpg) no-repeat center / cover;
+        height: 95vh;
+    }
+     #carouselExampleIndicators .carousel-item:nth-of-type(6) {
+        background: url(../img/cybertruck2.png) no-repeat center / cover;
+        height: 95vh;
+    }
+    #carouselExampleIndicators .carousel-item:nth-of-type(7) {
+        background: url(../img/semi.jpg) no-repeat center / cover;
+        height: 95vh;
+    }
+    
+    #topCarousel .carousel-item:nth-of-type(1)::after{
+        content: "";
+        background: url(../img/light_2.png) no-repeat center / cover;
+        position: absolute;
+        width: 100%;
+        height: 100%;       
+        animation: light 1s ease both;
+       opacity: 0.5;
+    }
+    @keyframes light {
+        0%{opacity: 0}
+        75%{opacity: 0}
+        80%{opacity: 0.2}
+        85%{opacity: 0.4}
+        90%{opacity: 0.6}
+        95%{opacity: 0.8}
+        100%{opacity: 1}
+    }
+    #topCarousel .carousel-item:nth-of-type(1) .carousel-caption{
+       bottom:80px;
+       animation: carousel_txt_01 1s linear both;
+    }
+    @keyframes carousel_txt_01 {
+        0%{opacity: 0}
+        75%{opacity: 0}
+        80%{opacity: 0.2}
+        85%{opacity: 0.4}
+        90%{opacity: 0.6}
+        95%{opacity: 0.8}
+        100%{opacity: 1}
+    }
+    #topCarousel .carousel-item:nth-of-type(2) .carousel-caption{
+        bottom: 50px;
+
+
+    }
+     /*테슬라비디오*/
+     /*#topCarousel .carousel-item:nth-of-type(3) .carousel-caption{         
+             background:url(../img/); }
+    #topCarousel .carousel-item:nth-of-type(3) {
+
+    }*/
+    /*#topCarousel .carousel-item:nth-of-type(3) video::after{
+        content: "";
+        background: url(../img/teslavideo.mp4) no-repeat center / cover;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }*/
+    /*8.캐로셀 배경 이미지를 어둡게 하여 위의 이미지 컨텐츠 부각시키기*/
+    #topCarousel .carousel-item::after{
+        content: "" ;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.4
+    }
+    /*9.캐로셀 좌우 버튼을 마우스를 올리면 나타나도록 설정*/
+    #topCarousel .carousel-control-next{
+        right:-200px;
+        transition: right 1s;
+    }
+    #topCarousel .carousel-control-prev{
+        left:-200px;
+        transition: left 1s;
+    }
+    #topCarousel:hover .carousel-control-next{
+        right:0px;
+    }
+    #topCarousel:hover .carousel-control-prev{
+        left:0px;
+    }
+    /*11. 캐로셀 좌우 버튼 호버시 색상 바꾸기*/
+    #topCarousel .carousel-control-next:hover, #topCarousel .carousel-control-prev:hover{
+        color:var(--white);
+    }
+    /*12. 캐로셀 하단 인디케이터 버튼 활성화시 스타일 변경*/
+    #topCarousel .carousel-indicators .active{
+        background-color:var(--white);
+    }
+    /*16.loading img 위치 잡기*/
+    .loading .d-flex img{
+        /*border:2px solid red;*/
+        position: absolute;
+        top:50%;
+        width: 200px;
+        margin-top: -48px;
+    }
+    .loading{
+        height: 100vh;
+        border:1px solid;
+        background-color: black;
+        width: 100%;
+    }
+    /*21.navbar 배경색 customize*/
+    .bg-black{
+        background-color:#000000;
+    }
+    .bg-gray{
+        background-color: var(--lightgray);
+    }
+    .txt-black{
+        color:#000000;
+    }
+    .txt-gray{
+        color:var(--lightgray);
+    }
+    
+    /*25.네브바의 height 설정하고 txt의 스타일 변경*/
+    .navbar-nav .nav-link{
+        padding-top: 10px;
+        padding-bottom: 0px;
+    }
+    .navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link{
+            color: var(--red);
+    }
+    .navbar-dark .navbar-nav .nav-link{
+        color:#fff;
+    }
+    /*두번째 메뉴 배경이미지*/
+   
+    /*네번째 메뉴의 배경이미지*/
+    
+    /*34.scrollspy를 위한 설정*/
+    body {
+      position: relative;
+    }
+    /*39.윈도우 창에 가로스크롤 생기는 부분 처리*/
+    /*53.로딩시 가로 세로 스크롤 모두 없애기*/
+    html,body{
+        /*overflow-x: hidden;*/
+        overflow: hidden;
+    }
+    /*42.다섯번째 메뉴의 배경이미지*/
+    
+    
+    /*52.card-body안의 텍스트 스타일*/
+    .card-body .card-title{
+        color:var(--lightgray);
+    }
+    .card-body .card-text::before{
+        content:" ";
+        width: 50%;
+        height: 4px;
+        background-color: var(--lightgray);
+        display: block;
+        margin-bottom: 10px;
+    }
+    /*59.마지막 하단의 배경이미지*/
+    
+    .btn-black{
+        background-color: black;
+        color:white;
+        border-color:black;
+    }
+    .form-control::placeholder{
+        color:white;
+    }
+    .form-control{
+        color:white !important
+    }
+    #inputState option{
+        color:var(--lightgray);
+    }
+
+    
+    /*64.waypoint가 작동하기 전 원하는 요소들을 보이지 않도록 설정*/
+    .wp1, .wp2, .wp3, .wp4, .wp5, .wp6{
+        visibility: hidden;
+    }
+    .animate__animated{
+        visibility: visible;
+    }
+
+	.nav-item + .nav-item{margin-left: 25px;}
+
+    /*두번째 캐로셀 좌우 버튼을 마우스를 올리면 나타나도록 설정*/
+    #carouselExampleIndicators .carousel-control-next{
+        right:-200px;
+        transition: right 1s;
+    }
+    #carouselExampleIndicators .carousel-control-prev{
+        left:-200px;
+        transition: left 1s;
+    }
+    #carouselExampleIndicators:hover .carousel-control-next{
+        right:0px;
+    }
+    #carouselExampleIndicators:hover .carousel-control-prev{
+        left:0px;
+    }
+    h1.model_s_txt{
+        color : var(--black);
+    }
+    .scale{
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transition: all 0.3s ease-in-out;   /* 부드러운 모션을 위해 추가*/
+    }
+    .scale:hover{
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+    }
+    
+ section#birth{
+        background: url(../img/story_bg.png) no-repeat center;
+		background-size: cover;
+        background-attachment: fixed;
+    }
+section#products{
+        background: url(../img/section3_bg.png) no-repeat center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+section#cf{
+        background: url(../img/video_bg.jpg) no-repeat center;
+		background-size: cover;
+        padding: 55px;
+        background-attachment: fixed;
+    }
+section#garden{
+        background-color: white no-repeat center;
+       
+    }
+section#contact{
+        background: url(../img/tesla_last_bg10.png) no-repeat center;
+		background-size: cover;
+        background-attachment: fixed;
+    }
+
+
+/*.story_bg, .electric_bg, .video_bg, .contact_bg{
+        width: 100%;
+        height: 100vh;
+        position: relative;
+    }
+    .bg-wrap{
+        clip: rect(0, auto, auto, 0);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .bg-story, .bg-electric, .bg-video, .bg-contact{
+        position: fixed;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height:100%;
+        background-size: cover;
+        background-position: center center;
+    }
+    .story_bg .bg-story{
+        background-image: url(../img/story_bg.png);
+    }
+    .electric_bg .bg-electric{
+        background-image: url(../img/section3_bg.png);
+    }
+    .video_bg .bg-video{
+        background-image: url(../img/video_bg.jpg);
+    }
+    .contact_bg .bg-contact{
+        background-image: url(../img/tesla_last_bg10.png)
+    }*/
